@@ -6,6 +6,6 @@ module Spree
     has_many :roles, through: :roles_permission_sets
 
     validates :name, presence: true, uniqueness: true
-    validates :permissions, length: { minimum: 1, too_short: Spree.t(:atleast_one_permission_is_required) }, on: :update
+    validates :permissions, length: { minimum: 1, too_short: I18n.t('spree.atleast_one_permission_is_required') }, on: :update
   end
 end
